@@ -14,6 +14,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { InvoiceDialogComponent } from './invoice-dialog/invoice-dialog.component';
+import { FormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { InvoiceDialogComponent } from './invoice-dialog/invoice-dialog.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'bobs-computer-repair-shop';
-}
+  isDarkTheme: boolean = true;
+
+  constructor() {}
+  ngOnInit() {}
+
+ }
