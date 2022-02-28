@@ -13,9 +13,15 @@ import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
-import { InvoiceDialogComponent } from './invoice-dialog/invoice-dialog.component';
-import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { InvoiceDetailsDialogComponent } from './invoice-details-dialog/invoice-details-dialog.component';
+import { InvoicingComponent } from './invoicing/invoicing.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { CookieService } from 'ngx-cookie-service';
+import { BaseNavComponent } from './base-nav/base-nav.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,11 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     SignInComponent,
     RegisterComponent,
     SidenavListComponent,
-    InvoiceDialogComponent
+    InvoiceDetailsDialogComponent,
+    InvoicingComponent,
+    NotFoundComponent,
+    AuthLayoutComponent,
+    BaseNavComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    MatSlideToggleModule
+    ReactiveFormsModule,
+    MatSlideToggleModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -31,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatCardModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     MatTabsModule,
