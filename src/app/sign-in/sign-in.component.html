@@ -1,1 +1,52 @@
-<p>sign-in works!</p>
+<div class="mat-app-background" [ngClass]="{'dark-theme-mode': isDarkTheme}">
+  <mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+      <div class="logo">
+        <img src="./assets/bobs logo.png" height="50" />
+      </div>
+      <div style="width: 80%">
+        <div fxLayout="row wrap" fxLayoutAlign="end start" class="white">
+          <button mat-button routerLink="/home">Home</button>
+          <button mat-button routerLink="/services">Services</button>
+          <button mat-button routerLink="/about">About</button>
+          <button mat-button routerLink="/contact">Contact</button>
+          <button class= "sign-in-container-one" mat-button routerLink="/sign-in">Sign In</button>
+          <button class="sign-in-container-two" mat-button routerLink="/register">Register</button>
+        </div>
+      </div>
+      <br /><br /><br /><span class="toggle-text" style="flex:auto"></span>
+        <mat-slide-toggle [(ngModel)]='isDarkTheme' class="toggle-text">Dark Theme</mat-slide-toggle>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <div class="main-container" fxLayout="column">
+    <div fxFlex>
+      <mat-card class="sign-in-container">
+        <mat-card-title class="blue">Sign In</mat-card-title><br />
+        <mat-card-subtitle>You must enter a valid User ID to proceed.</mat-card-subtitle>
+        <br />
+        <mat-card-content>
+          <div class="msg-error" *ngIf="errorMessage">
+            {{ errorMessage }}
+        </div>
+        <mat-card class="mat-elevation-z0" fxLayout="column" fxLayoutGap="10px">
+          <form [formGroup]="signinForm" (ngSubmit)="onSubmit(); signinForm.reset()">
+              <mat-card-content>
+                  <mat-form-field fxFlex appearance="fill">
+                      <mat-label for="txtStudentId" id="lblStudentId">User ID</mat-label>
+                      <input type="text" matInput formControlName="userId" id="txtStudentId" name="txtStudentId" />
+                  </mat-form-field>
+              </mat-card-content>
+              <mat-card-actions>
+                <button type="submit" fxFlex mat-raised-button color="primary">Submit</button>
+              </mat-card-actions>
+          </form>
+        </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  </div>
+
+

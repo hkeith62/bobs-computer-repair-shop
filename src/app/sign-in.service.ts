@@ -5,13 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class SignInService {
 
-  employeeIds: Array<number>;
+  userIds: Array<number>;
 
   constructor() {
-    this.employeeIds = [1007, 1008, 1009, 1010, 1011, 1012];
+    this.userIds = [1007, 1008, 1009, 1010, 1011, 1012];
   }
 
-  validate(employeeId: number) {
-    return this.employeeIds.some(id => id === employeeId);
+  validate(userId: number) {
+    return this.userIds.some(id => id === userId);
+
   }
 }

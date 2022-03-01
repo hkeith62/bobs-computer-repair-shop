@@ -1,3 +1,4 @@
+
 <div class="mat-app-background" [ngClass]="{'dark-theme-mode': isDarkTheme}">
   <mat-toolbar class="toolbar">
     <mat-toolbar-row>
@@ -6,12 +7,8 @@
       </div>
       <div style="width: 80%">
         <div fxLayout="row wrap" fxLayoutAlign="end start" class="white">
-          <button mat-button routerLink="/home">Home</button>
-          <button mat-button routerLink="/services">Services</button>
-          <button mat-button routerLink="/about">About</button>
-          <button mat-button routerLink="/contact">Contact</button>
-          <button class= "sign-in-container-one" mat-button routerLink="/session/sign-in">Sign In</button>
-          <button class="sign-in-container-two" mat-button routerLink="/register">Register</button>
+
+          <button class= "sign-in-container-one" mat-button (click)="signOut()">Sign Out</button>
         </div>
       </div>
       <br /><br /><br /><span class="toggle-text" style="flex:auto"></span>

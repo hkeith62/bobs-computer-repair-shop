@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { InvoicingComponent } from './invoicing/invoicing.component';
+import { InvoicingLayoutComponent } from './invoicing-layout/invoicing-layout.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignInGuard} from './sign-in.guard';
@@ -19,10 +20,6 @@ const routes: Routes = [
     path: '',
     component: BaseNavComponent,
     children: [
-      {
-        path: '',
-        component: HomeComponent
-      },
       {
         path: 'home',
         component: HomeComponent
@@ -42,11 +39,6 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
-      },
-      {
-        path: 'invoicing',
-        component: InvoicingComponent,
-        canActivate: [SignInGuard]
       }
     ]
   },
@@ -65,9 +57,22 @@ const routes: Routes = [
     ]
   },
   {
-    path: '**',
-    redirectTo: 'session/not-found'
-  }
+     path: 'invoicing-layout',
+     component: InvoicingLayoutComponent,
+     children: [
+     {
+        path: 'invoicing',
+        component: InvoicingComponent,
+      }
+      ],
+      canActivate: [SignInGuard]
+    },
+
+      {
+        path: '**',
+        redirectTo: 'session/not-found'
+      },
+
 ];
 
 @NgModule({

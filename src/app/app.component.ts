@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'bobs-computer-repair-shop';
+  isDarkTheme: boolean = true;
 
   constructor() {}
   ngOnInit() {}

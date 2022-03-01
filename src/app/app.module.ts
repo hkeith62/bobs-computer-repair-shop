@@ -22,6 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { CookieService } from 'ngx-cookie-service';
 import { BaseNavComponent } from './base-nav/base-nav.component';
+import { InvoicingLayoutComponent } from './invoicing-layout/invoicing-layout.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BaseNavComponent } from './base-nav/base-nav.component';
     InvoicingComponent,
     NotFoundComponent,
     AuthLayoutComponent,
-    BaseNavComponent
+    BaseNavComponent,
+    InvoicingLayoutComponent
   ],
   imports: [
     BrowserModule,
