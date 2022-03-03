@@ -1,1 +1,37 @@
-<p>home works!</p>
+<section fxLayout="column" fxFlexAlign="stretch">
+  <div fxFlexAlign="center" style="margin-top:-20px;margin-bottom:60px;">
+      <p class="blue">Bobs Computer Repair Services</p>
+  </div>
+
+  <div fxFlexAlign="center">
+  <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
+      <mat-tab label="Carry-In">
+        <div class="photo-container">
+          <img src="./assets/carry-in.jpg" height= "300" width= "750"/>
+        </div>
+      </mat-tab>
+      <mat-tab label>
+        <div class="photo-container">
+          <img src="./assets/we-travel.jpg" height= "300" width= "300"/>
+        </div>
+        </mat-tab>
+      <mat-tab label="We Come to You">
+        <div class="photo-container">
+          <img src="./assets/we-travel.jpg" height= "300" width= "750"/>
+        </div>
+        </mat-tab>
+        <mat-tab label>
+          <div class="photo-container">
+            <img src="./assets/mail.jpeg" height= "300" width= "500"/>
+          </div>
+          </mat-tab>
+          <mat-tab label="Mail-In Repair">
+            <div class="photo-container">
+              <img src="./assets/mail.jpeg" height= "300" width= "750"/>
+            </div>
+            </mat-tab>
+    </mat-tab-group>
+
+    </div>
+</section>
+

@@ -17,16 +17,73 @@
   </mat-toolbar>
 
   <br />
-  <div fxLayout="row wrap">
-    <div fxFlex>
-      <mat-card class="main-container">
-        <mat-card-title class="blue"></mat-card-title>
-        <br /><br />
-        <mat-card-content>
-          <router-outlet></router-outlet>
-        </mat-card-content>
-      </mat-card>
-    </div>
+  <div class="container" width="800px" id="invoice" >
+    <br /><br />
+      <div class="row" >
+          <div class="col-xs-6 heading blue" >INVOICING</div>
+      </div>
+      <br /><br /><br />
+      <div fxLayout="row wrap">
+          <div fxFlex style="margin-bottom:100%">
+              <mat-card class="main-container">
+                  <mat-card-title class="blue"></mat-card-title>
+                  <br /><br />
+                  <mat-card-content>
+                    <section class="jumbotron">
+                      <div class="row infos">
+                        <div class="col-xs-6 customer-info">
+                          <div class="input-container"><label for ="customer-name">Customer:</label><br><input type="text" placeholder="name..." ng-model="invoice.customer_info.name"/></div><br />
+                        </div>
+                      </div>
+                    </section><br /><br />
+                    <section class="row" ng-controller="InvoiceController">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Description</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Labor</th>
+                            <th>Total</th>
+                            <th>Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="item in invoice.items">
+                            <td><input type="text" ng-model="item.description" class="form-control" /></td>
+                            <td><input type="text" ng-model="item.qty" class="form-control" /></td>
+                            <td><input type="number" ng-model="item.unitPrice" class="form-control" /></td>
+                            <td><input type="number" ng-model="item.labor" class="form-control" /></td>
+                            <td><input type="number" ng-model="item.total" class="form-control" /></td>
+
+                            <td><button type="button" class="btn btn-danger" ng-click="remove($index)">Delete</button></td>
+                          </tr>
+                          <tr>
+                          <td><button type="button" id= "pm-but"class="btn btn-primary" ng-click="add()">Add item</button></td>
+                            <td></td>
+                            <td></td>
+                            <br/><br /><br /> <br />
+                            <td>      <div class="row" style="margin-top:30px">
+                              <div class="col-xs-10 text-right">Sub Total</div>
+                            </div><br />
+                            <div class="row">
+                              <div class="col-xs-10 text-right">Tax(%): <input ng-model="invoice.tax" ng-validate="number" style="width:43px"></div>
+                            </div><br/>
+                            <div class="row">
+                              <div class="col-xs-10 text-right">Grand Total:</div>
+                            </div></td>
+
+                          </tr>
+
+                        </tbody>
+
+                      </table>
+                    </section>
+                  </mat-card-content>
+              </mat-card>
+              <br /><br />
+          </div>
+      </div>
   </div>
-  </div>
+</div>
 

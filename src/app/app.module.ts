@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HomeComponent } from './home/home.component';
-import { ServicesComponent } from './services/services.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -23,12 +22,15 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { CookieService } from 'ngx-cookie-service';
 import { BaseNavComponent } from './base-nav/base-nav.component';
 import { InvoicingLayoutComponent } from './invoicing-layout/invoicing-layout.component';
+import { ServicesComponent } from './services/services.component';
+import { GradeSummaryComponent } from './grade-summary/grade-summary.component';
+import { MatSelectModule } from '@angular/material/select';
+import { GpaComponent } from './gpa/gpa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ServicesComponent,
     AboutComponent,
     ContactComponent,
     SignInComponent,
@@ -39,7 +41,10 @@ import { InvoicingLayoutComponent } from './invoicing-layout/invoicing-layout.co
     NotFoundComponent,
     AuthLayoutComponent,
     BaseNavComponent,
-    InvoicingLayoutComponent
+    InvoicingLayoutComponent,
+    ServicesComponent,
+    GradeSummaryComponent,
+    GpaComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ import { InvoicingLayoutComponent } from './invoicing-layout/invoicing-layout.co
     FormsModule,
     ReactiveFormsModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
