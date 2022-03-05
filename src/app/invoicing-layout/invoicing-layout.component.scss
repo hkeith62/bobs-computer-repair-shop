@@ -40,7 +40,7 @@ mat-card {
   text-align:center;
   line-height:2.5em;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 12px;
 
 }
 th {
@@ -48,3 +48,14 @@ th {
   font-weight: 200;
   font-size: 12px;
 }
+#error-message {
+  margin-top:16px;
+}
+#error-message-qty {
+  margin-top: 16px;
+
+}
+#btn-primary {
+  width: 60%;
+}
+

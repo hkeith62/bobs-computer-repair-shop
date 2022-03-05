@@ -26,7 +26,7 @@ import { ServicesComponent } from './services/services.component';
 import { GradeSummaryComponent } from './grade-summary/grade-summary.component';
 import { MatSelectModule } from '@angular/material/select';
 import { GpaComponent } from './gpa/gpa.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +56,8 @@ import { GpaComponent } from './gpa/gpa.component';
     ReactiveFormsModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

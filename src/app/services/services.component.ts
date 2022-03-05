@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ITranscript } from '../transcript.interface';
+import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { InvoiceDetailsDialogComponent } from '../invoice-details-dialog/invoice-details-dialog.component';
 
 @Component({
   selector: 'app-services',
@@ -13,11 +16,23 @@ export class ServicesComponent implements OnInit {
   transcriptEntries: Array<ITranscript> = [];
   gpaTotal: number = 0;;
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.transcriptEntry = {} as ITranscript;
   }
 
   ngOnInit(): void {
+  }
+  showInvoiceDetails() {
+    const dialogRef = this.dialog.open(InvoiceDetailsDialogComponent, {
+      disableClose: true,
+      width: '800px'
+
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'confirm') {
+      }
+    });
+
   }
 
   saveEntry() {
@@ -38,19 +53,19 @@ export class ServicesComponent implements OnInit {
         case 'Spyware Removal - $99.99':
           gpa += 99.99;
           break;
-        case 'RAM Upgrade $129.99':
+        case 'RAM Upgrade - $129.99':
           gpa += 129.99;
           break;
-        case 'Software Installation $49.99':
+        case 'Software Installation - $49.99':
           gpa += 49.99;
           break;
-        case 'Tune Up $89.99':
+        case 'Tune Up - $89.99':
           gpa += 89.99;
           break;
-        case 'Keyboard Cleaning $45.00':
+        case 'Keyboard Cleaning - $45.00':
           gpa += 45.00;
           break;
-        case 'Disk Clean-Up $149.99)':
+        case 'Disk Clean-Up - $149.99':
           gpa += 149.99;
           break;
       }
@@ -65,4 +80,5 @@ export class ServicesComponent implements OnInit {
     this.transcriptEntries = [];
     this.gpaTotal = 0;
   }
+
 }

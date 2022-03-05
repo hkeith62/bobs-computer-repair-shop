@@ -29,56 +29,66 @@
                   <mat-card-title class="blue"></mat-card-title>
                   <br /><br />
                   <mat-card-content>
+                    <form [formGroup]="form">
+
                     <section class="jumbotron">
                       <div class="row infos">
                         <div class="col-xs-6 customer-info">
-                          <div class="input-container"><label for ="customer-name">Customer:</label><br><input type="text" placeholder="name..." ng-model="invoice.customer_info.name"/></div><br />
+                          <div class="input-container"><label for ="customer-name">Customer:</label><br><input formControlName="customerName" class="form-control" type="text" placeholder="name..." /></div><br />
+                          <div class="alert alert-danger" *ngIf="customerNameErrors?.['required']">Customer name is required</div>
                         </div>
                       </div>
                     </section><br /><br />
                     <section class="row" ng-controller="InvoiceController">
                       <table class="table table-hover">
+
                         <thead>
                           <tr>
                             <th>Description</th>
                             <th>Qty</th>
                             <th>Unit Price</th>
-                            <th>Labor</th>
+                            <th>Labor (hrs)</th>
                             <th>Total</th>
                             <th>Delete</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr ng-repeat="item in invoice.items">
-                            <td><input type="text" ng-model="item.description" class="form-control" /></td>
-                            <td><input type="text" ng-model="item.qty" class="form-control" /></td>
-                            <td><input type="number" ng-model="item.unitPrice" class="form-control" /></td>
-                            <td><input type="number" ng-model="item.labor" class="form-control" /></td>
-                            <td><input type="number" ng-model="item.total" class="form-control" /></td>
 
-                            <td><button type="button" class="btn btn-danger" ng-click="remove($index)">Delete</button></td>
+                          <tr ng-repeat="item in invoice.items">
+                            <td><input formControlName="description" name="description" type="text"  /></td>
+                            <td><input formControlName="qty" name="qty" type="number" class="form-control" /></td>
+                            <td><input formControlName="unitPrice" name="unitPrice" type="number" class="form-control" /></td>
+                            <td><input formControlName="labor" name="labor" type="number" class="form-control" /></td>
+                            <td><input formControlName="total" name="total" type="number" class="form-control" /></td>
+                            <td><button type="button" class="btn btn-danger">Delete</button></td>
                           </tr>
+
+                          <div id="error-message" class="alert alert-danger" *ngIf="descriptionErrors?.['required']">A description is required</div>
                           <tr>
-                          <td><button type="button" id= "pm-but"class="btn btn-primary" ng-click="add()">Add item</button></td>
+                          <div id="btn-primary"><td><button type="button" style="margin-top:45px" class="btn btn-primary" fxFlex mat-raised-button color="primary">Add item</button></td>
+
                             <td></td>
                             <td></td>
                             <br/><br /><br /> <br />
-                            <td>      <div class="row" style="margin-top:30px">
-                              <div class="col-xs-10 text-right">Sub Total</div>
-                            </div><br />
-                            <div class="row">
-                              <div class="col-xs-10 text-right">Tax(%): <input ng-model="invoice.tax" ng-validate="number" style="width:43px"></div>
-                            </div><br/>
-                            <div class="row">
-                              <div class="col-xs-10 text-right">Grand Total:</div>
-                            </div></td>
-
+                            <td>
+                              <div class="row" style="margin-top:30px">
+                                  <div class="col-xs-10 text-right">Sub Tot: <input formControlName="subTotal" name="subTotal" type="text" style="width:43px"> </div>
+                              </div><br />
+                              <div class="row">
+                                  <div class="col-xs-10 text-right">Tax(%): <input formControlName="invoiceTax" name="invoiceTax" type="number" style="width:43px"></div>
+                              </div><br/>
+                              <div class="row">
+                                  <div class="col-xs-10 text-right">Grand Total:</div>
+                              </div
+                            ></td>
+                            </div>
                           </tr>
 
                         </tbody>
-
                       </table>
                     </section>
+
+                  </form>
                   </mat-card-content>
               </mat-card>
               <br /><br />

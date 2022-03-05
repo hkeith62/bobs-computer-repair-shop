@@ -5,11 +5,12 @@
     Modified By: Keith Hall
     Description: HTML markup file for the home component.
 -->
+<body ng-app="invoicing" ng-controller="InvoiceCtrl" >
 <div fxLayout="row wrap" fxLayoutGap="30px">
   <div class="grade-form" fxFlex>
     <mat-card class="mat-elevation-z8">
 
-      <mat-card-title class="blue">Computer Repair</mat-card-title><br />
+      <mat-card-title class="blue">Computer Repair</mat-card-title><br /><br />
 
       <mat-card-content>
         <form fxLayout="column" fxLayoutGap="16px">
@@ -43,10 +44,9 @@
 <div fxLayout="column" fxLayoutGap="20px">
   <div fxFlex class="gpa">
 
-
     <div fxLayout class="mat-elevation-z0" style="width:50%;margin-left:40%;margin-top:-10%">
       <div fxFlex style="text-align:center">
-        <div class="row" style="margin-top:70px">
+        <div class="row" style="margin-top:100px">
           <div class="col-xs-10 text-right">Sub Total:</div>
         </div><br />
         <div class="row">
@@ -55,9 +55,11 @@
         <div class="row">
           <div class="col-xs-10 text-right">Grand Total:&nbsp;$<app-gpa style="font-size:16px" [gpaTotal]="gpaTotal"></app-gpa></div>
           <div class="button"><button mat-raised-button color="primary" (click)="calculateResults()">Invoice</button></div>
+          <button mat-raised-button (click)="showInvoiceDetails()">Open Dialog</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+</body>
 
