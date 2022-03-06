@@ -30,7 +30,7 @@
                   <br /><br />
                   <mat-card-content>
                     <form [formGroup]="form">
-
+                    <div formArrayName="items">
                     <section class="jumbotron">
                       <div class="row infos">
                         <div class="col-xs-6 customer-info">
@@ -49,45 +49,46 @@
                             <th>Unit Price</th>
                             <th>Labor (hrs)</th>
                             <th>Total</th>
-                            <th>Delete</th>
+
                           </tr>
                         </thead>
+
                         <tbody>
 
-                          <tr ng-repeat="item in invoice.items">
+                          <tr *ngFor="let item of items.controls; let i=index" [formGroupName]="i">
                             <td><input formControlName="description" name="description" type="text"  /></td>
                             <td><input formControlName="qty" name="qty" type="number" class="form-control" /></td>
                             <td><input formControlName="unitPrice" name="unitPrice" type="number" class="form-control" /></td>
                             <td><input formControlName="labor" name="labor" type="number" class="form-control" /></td>
                             <td><input formControlName="total" name="total" type="number" class="form-control" /></td>
-                            <td><button type="button" class="btn btn-danger">Delete</button></td>
+                            <td><button type="button" class="btn btn-danger"(click)="removeItem('i')">Remove</button></td>
                           </tr>
 
                           <div id="error-message" class="alert alert-danger" *ngIf="descriptionErrors?.['required']">A description is required</div>
                           <tr>
-                          <div id="btn-primary"><td><button type="button" style="margin-top:45px" class="btn btn-primary" fxFlex mat-raised-button color="primary">Add item</button></td>
+                            <div class="row" id="btn-size">
+                          <td><button type="button" style="margin-top:45px" class="btn btn-primary" fxFlex mat-raised-button color="primary" (click)="addNewItem()">Add item</button></td></div>
 
                             <td></td>
                             <td></td>
                             <br/><br /><br /> <br />
-                            <td>
-                              <div class="row" style="margin-top:30px">
-                                  <div class="col-xs-10 text-right">Sub Tot: <input formControlName="subTotal" name="subTotal" type="text" style="width:43px"> </div>
-                              </div><br />
-                              <div class="row">
-                                  <div class="col-xs-10 text-right">Tax(%): <input formControlName="invoiceTax" name="invoiceTax" type="number" style="width:43px"></div>
-                              </div><br/>
-                              <div class="row">
-                                  <div class="col-xs-10 text-right">Grand Total:</div>
-                              </div
-                            ></td>
-                            </div>
+                            <td></td>
+                            <div flexLayout class="row-wrap" id="tax-menu">
+                                <div class="row">
+                                    <td>Sub Total: &nbsp;</td>
+                                </div>
+                                <div class="row">
+                                    <td>Tax(%):&nbsp;&nbsp;<input formControlName="invoiceTax" class="form-control" type="number" style="width:43px"></td>
+                                </div>
+                                <div class="row"><td>Total:&nbsp;</td></div>
+                           </div>
+
                           </tr>
 
                         </tbody>
                       </table>
                     </section>
-
+                  </div>
                   </form>
                   </mat-card-content>
               </mat-card>
@@ -96,4 +97,3 @@
       </div>
   </div>
 </div>
-

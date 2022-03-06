@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { IInvoice } from '../employee-invoice.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { InvoiceDetailsDialogComponent } from '../invoice-details-dialog/invoice-details-dialog.component';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormArray, Validators, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -32,6 +32,16 @@ export class InvoicingLayoutComponent implements OnInit {
       total: new FormControl(),
       subTotal: new FormControl(),
       invoiceTax: new FormControl(),
+      items: this._fb.array([
+        this._fb.group({
+          description: [''],
+          qty: [''],
+          unitPrice: [''],
+          labor: [''],
+          invoiceTax: [''],
+          total: ['']
+        })
+      ])
     });
   }
 
@@ -40,6 +50,30 @@ export class InvoicingLayoutComponent implements OnInit {
   }
   get descriptionErrors(): any {
     return this.form.get('description')?.touched && this.form.get('description')?.errors
+  }
+
+  get items() {
+    return this.form.get('items') as FormArray;
+  }
+
+  addNewItem() {
+
+    const itemLength = this.items.length;
+    const newItem = this._fb.group ({
+
+        description: [itemLength + 1 ],
+        qty: [''],
+        unitPrice: [''],
+        labor: [''],
+        total: ['']
+    });
+    this.items.push(newItem);
+
+  }
+
+  removeItem(itemId: any) {
+   this.items.removeAt(itemId);
+
   }
 
   ngOnInit(): void {
