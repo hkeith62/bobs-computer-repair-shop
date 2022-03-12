@@ -1,3 +1,12 @@
+/*
+============================================
+; Title: sidenav-list.component.spec.ts
+; Author: Professor Krasso
+; Date: 11 March 2022
+; Modified By: Keith Hall
+; Description: Test file for the sidenav-list component.
+;===========================================
+*/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidenavListComponent } from './sidenav-list.component';

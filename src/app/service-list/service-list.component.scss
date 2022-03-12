@@ -1,0 +1,23 @@
+/**
+ * Title: service-list.component.scss
+ * Author: Professor Krasso
+ * Date: 11 March 2022
+ * Modified By: Keith Hall
+ * Description: Styles for the service-list component.
+ */
+.service-tile {
+  padding: 5rem 5rem 2rem;
+  color: black;
+}
+mat-checkbox {
+  padding: 0.2rem;
+  color: #212121;
+}
+
+.submit-button {
+  float: right;
+  margin: 0 5rem 5rem 0;
+}
+.service-wrapper {
+  min-height: calc(100vh - 565px);
+}

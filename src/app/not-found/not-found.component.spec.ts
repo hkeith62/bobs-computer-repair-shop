@@ -1,3 +1,12 @@
+ /*
+============================================
+; Title: not-found.component.spec.ts
+; Author: Professor Krasso
+; Date: 02/06/2022
+; Modified By: Keith Hall
+; Description: Test file for the Not-found component.
+;===========================================
+*/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotFoundComponent } from './not-found.component';

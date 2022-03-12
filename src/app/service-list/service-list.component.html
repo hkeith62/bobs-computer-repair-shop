@@ -1,0 +1,64 @@
+<!--
+    Title: service-list.component.html
+    Author: Professor Krasso
+    Date: 11 March 2022
+    Modified By: Keith Hall
+    Description: HTML markup file for the service-list component.
+-->
+<div class="mat-app-background" [ngClass]="{'dark-theme-mode': isDarkTheme}">
+  <mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+      <div class="logo">
+        <img src="../assets/bobs logo.png" height="50" />
+      </div>
+      <div style="width: 80%">
+        <div fxLayout="row wrap" fxLayoutAlign="end start" class="white">
+          <button class= "sign-in-container-one" mat-button (click)="signOut()">Sign Out</button>
+        </div>
+      </div>
+      <br /><br /><br /><span class="toggle-text" style="flex:auto"></span>
+        <mat-slide-toggle [(ngModel)]='isDarkTheme' class="toggle-text">Dark Theme</mat-slide-toggle>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div class="service-wrapper">
+  <div fxLayout="row wrap">
+    <div fxFlex class="service-tile">
+      <h3>Services</h3>
+
+      <!-- Service Checkboxes -->
+      <div *ngFor="let service of services">
+        <mat-checkbox name="" id="" totalValue="" [(ngModel)]="service.checked">
+          {{ service.name }} - ${{ service.price.toFixed(2) }}
+        </mat-checkbox>
+      </div>
+    </div>
+    <div fxFlex="100%" fxFlex.gt-sm="50%" class="service-tile">
+      <h3>Standard Fees</h3>
+      <br />
+      <div>
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Part(s)</mat-label>
+          <mat-icon matPrefix>attach_money</mat-icon><input type="text" name="txtPart" id="txtPart" matInput type="number" [(ngModel)]="part"/>
+          <button mat-button *ngIf="part" matSuffix mat-icon-button aria-label="Clear" (click)="part = ''"><mat-icon>close</mat-icon></button>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Labor (standard fee of $50 per hour)</mat-label>
+          <mat-icon matPrefix>access_time</mat-icon><input type="text" name="txtHour" id="txtHour" matInput type="number" [(ngModel)]="hour"/>
+          <button mat-button *ngIf="hour" matSuffix mat-icon-button aria-label="Clear"(click)="hour = ''"><mat-icon>close</mat-icon></button>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="submit-button">
+    <!-- Reset all checkboxes and input fields -->
+    <button mat-button color="warn" (click)="reset()">Reset</button>
+    <!-- Launch Modal with Calculated Results -->
+    <button mat-raised-button color="accent" (click)="calculateResults()">
+      Calculate
+    </button>
+  </div>
+</div>

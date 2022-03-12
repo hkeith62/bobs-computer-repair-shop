@@ -1,3 +1,12 @@
+ /*
+============================================
+; Title: sign-in.component.spec.ts
+; Author: Professor Krasso
+; Date: 11 March 2022
+; Modified By: Keith Hall
+; Description: Test file for sign-in component.
+;===========================================
+*/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignInComponent } from './sign-in.component';

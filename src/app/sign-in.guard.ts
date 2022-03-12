@@ -1,3 +1,12 @@
+ /*
+============================================
+; Title: sign-in.guard.ts
+; Author: Professor Krasso
+; Date: 11 March 2022
+; Modified By: Keith Hall
+; Description: Sign-in guard for the sign-in component.
+;===========================================
+*/
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';

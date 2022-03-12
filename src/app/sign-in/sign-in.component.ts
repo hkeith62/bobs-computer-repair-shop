@@ -1,8 +1,18 @@
+/*
+============================================
+; Title: sign-in.component.ts
+; Author: Professor Krasso
+; Date: 11 March 2022
+; Modified By: Keith Hall
+; Description: Sign-in component for Bob's Computer Repair App.
+;===========================================
+*/
 import { Component, OnInit } from '@angular/core';
 import { SignInService } from '../sign-in.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -31,7 +41,7 @@ export class SignInComponent implements OnInit {
 
     if (this.signinService.validate(userId)) {
       this.cookieService.set('session_user', userId.toString(), 1)
-      this.router.navigate(['/invoicing-layout/invoicing']) // When user signs in they are routed to the invoicing page.
+      this.router.navigate(['/service-list']) // When user signs in they are routed to the invoicing page.
     } else {
       this.errorMessage = `The employee ID you entered is invalid, please try again.`;
     }

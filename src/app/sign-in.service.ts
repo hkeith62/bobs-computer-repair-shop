@@ -1,3 +1,12 @@
+ /*
+============================================
+; Title: sign-in.service.ts
+; Author: Professor Krasso
+; Date: 11 March 2022
+; Modified By: Keith Hall
+; Description: Sign-in service for Bob's Computer Repair App.
+;===========================================
+*/
 import { Injectable } from '@angular/core';
 
 @Injectable({

@@ -1,3 +1,12 @@
+ /*
+============================================
+; Title: app.component.spec.ts
+; Author: Professor Krasso
+; Date: 11 March 2022
+; Modified By: Keith Hall
+; Description: Test file for the app component.
+;===========================================
+*/
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';

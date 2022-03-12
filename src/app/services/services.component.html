@@ -1,65 +1,8 @@
 <!--
-    Title: home.component.html
+    Title: services.component.html
     Author: Professor Krasso
-    Date: 02/08/2022
+    Date: 11 March 2022
     Modified By: Keith Hall
-    Description: HTML markup file for the home component.
+    Description: HTML markup file for the Services Component.
 -->
-<body ng-app="invoicing" ng-controller="InvoiceCtrl" >
-<div fxLayout="row wrap" fxLayoutGap="30px">
-  <div class="grade-form" fxFlex>
-    <mat-card class="mat-elevation-z8">
-
-      <mat-card-title class="blue">Computer Repair</mat-card-title><br /><br />
-
-      <mat-card-content>
-        <form fxLayout="column" fxLayoutGap="16px">
-          <mat-form-field fxFlex appearance="fill">
-            <mat-label>Select*</mat-label>
-            <mat-select [(ngModel)]="transcriptEntry.grade" name="selectService">
-              <mat-option *ngFor="let grade of selectableServices" [value]="grade">
-                {{ grade }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-          <button mat-raised-button color="primary" (click)="saveEntry()">Add Item</button>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <div class="grade-summary" fxFlex>
-    <button mat-button color="primary" (click)="clearEntries()">Reset</button>
-    <div fxLayout class="mat-elevation-z8">
-        <div fxFlex>
-        <app-grade-summary *ngFor="let entry of transcriptEntries" [course]="entry.course" [grade]="entry.grade"></app-grade-summary>
-        </div>
-    </div>
-
-  </div>
-</div>
-
-<br /><br />
-
-<div fxLayout="column" fxLayoutGap="20px">
-  <div fxFlex class="gpa">
-
-    <div fxLayout class="mat-elevation-z0" style="width:50%;margin-left:40%;margin-top:-10%">
-      <div fxFlex style="text-align:center">
-        <div class="row" style="margin-top:100px">
-          <div class="col-xs-10 text-right">Sub Total:</div>
-        </div><br />
-        <div class="row">
-          <div class="col-xs-10 text-right">Tax(%):  </div>
-        </div><br/>
-        <div class="row">
-          <div class="col-xs-10 text-right">Grand Total:&nbsp;$<app-gpa style="font-size:16px" [gpaTotal]="gpaTotal"></app-gpa></div>
-          <div class="button"><button mat-raised-button color="primary" (click)="calculateResults()">Invoice</button></div>
-          <button mat-raised-button (click)="showInvoiceDetails()">Open Dialog</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-
+<p>services works!</p>

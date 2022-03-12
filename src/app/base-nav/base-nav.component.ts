@@ -13,5 +13,9 @@ export class BaseNavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  public executeSelectedChange = (event: any) => {
+    console.log(event);
+  }
 }
+
+

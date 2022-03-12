@@ -1,0 +1,52 @@
+<!--
+    Title: invoice-dialog.component.html
+    Author: Professor Krasso
+    Date: 11 March 2022
+    Modified By: Keith Hall
+    Description: HTML markup file for the invoice-dialog component.
+-->
+
+<!-- Invoice Modal -->
+<div class="btn-right">
+  <button mat-icon-button matDialogClose="cancel">
+    <mat-icon color="secondary">close</mat-icon>
+  </button>
+</div>
+
+<div class="invoice-title">Invoice Summary</div>
+<hr />
+<div class="invoice-content">
+  
+  <div *ngFor="let service of services" class="invoice-row">
+    <div class="service">
+      {{ service.name }}
+    </div>
+    <div class="price">${{ service.price.toFixed(2) }}</div>
+  </div>
+  <div class="invoice-custom">
+    <!-- Input price for parts -->
+    <div class="invoice-row" *ngIf="part">
+      <div class="service">Parts</div>
+      <div class="price">${{ part.toFixed(2) }}</div>
+    </div>
+    <div class="invoice-row" *ngIf="laborServiceTotal">
+      <!-- Input Labor Hours -->
+      <div class="service">
+        Labor
+        <span class="custom-service-calc">({{ hour }} ⨉ 50)</span>
+      </div>
+      <div class="price">${{ laborServiceTotal.toFixed(2) }}</div>
+    </div>
+  </div>
+  <!-- Total Price -->
+  <div class="invoice-row invoice-total" *ngIf="total">
+    <div class="service">Total Charges</div>
+    <div class="price">${{ total.toFixed(2) }}</div>
+  </div>
+</div>
+<div class="btn-right">
+  <!-- Print dialog -->
+  <button mat-stroked-button color="primary" onClick="window.print()">
+    <mat-icon color="primary">print</mat-icon> Print
+  </button>
+</div>

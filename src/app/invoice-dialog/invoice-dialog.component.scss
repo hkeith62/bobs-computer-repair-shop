@@ -1,0 +1,50 @@
+/**
+ * Title: invoice-dialog.component.scss
+ * Author: Professor Krasso
+ * Date: 11 March 2022
+ * Modified By: Keith Hall
+ * Description: Styling file for invoice-dialog component.
+ */
+ 
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+.btn-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.invoice-title {
+  padding: 1.5rem 2rem 1rem;
+  font-size: 1.5rem;
+}
+
+.invoice-content {
+  padding: 2rem;
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.invoice-custom {
+  padding-top: 1.5rem;
+}
+.invoice-total {
+  padding-top: 4rem;
+}
+// break down of price per hour
+.custom-service-calc {
+  padding-left: 1rem;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+mat-icon {
+  font-size: 14px;
+  height: unset;
+}
+
