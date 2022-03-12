@@ -5,4 +5,68 @@
     Modified By: Keith Hall
     Description: HTML markup file for the Services Component.
 -->
-<p>services works!</p>
+
+<div fxLayout="row wrap">
+  <div fxFlex>
+      <div class="photo-container">
+        <img src="./assets/contact.jpg" height= "450" width= "400"/>
+      </div>
+      <div class="blue caption">
+        <em>
+          Photo by Cottonbro on <a class="attribution-link " class="blue" href="https://www.pexels.com/search/Computer%20Repair/" target="_blank">Pixels</a>
+        </em>
+      </div>
+  </div>
+  <div feFlex>
+    <h1 class="blue" style="margin-left:50px">Repair Services Estimate</h1>
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title id="card-title-icon">
+      </mat-card-title>
+      <br />
+      <mat-card-content class="card-container">
+        <div *ngFor="let service of services">
+          <mat-checkbox [(ngModel)]="service.checked">
+            {{ service.name }} ({{ service.price | currency }})
+          </mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <button mat-button color="primary" class="reset-button" (click)="clearCheckboxes()" (click)="clearInputs()">Reset</button>
+  </div>
+  <div fxFlex style= "margin-top:50.38px">
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title class="card-title-icon">
+      </mat-card-title>
+      <br />
+      <mat-card-content class="align-center">
+        <div class="flex flex-col">
+
+          <br />
+          <div>
+              <mat-form-field fxFlex appearance="fill">
+                  <mat-label>Parts</mat-label>
+                      <h2 class="font-bold mt-6"></h2>{{ calculateTotalServices() | currency }}<input type="text" name="part" id="part" matInput type="number"
+                      [(ngModel)]="parts" />
+              </mat-form-field>
+          </div>
+          <div>
+              <mat-form-field fxFlex appearance="fill"><br /><br /><br />
+                  <mat-label>Labor <br /><br />$0.00</mat-label><input type="text" name="hours" id="hours" matInput type="number" [(ngModel)]="hours" />
+              </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <h2 class="total-button">Total: &nbsp;{{ calculateTotalServices() | currency }}</h2><br />
+
+     <button mat-raised-button color="accent" class="invoice-button"
+       (click)="calculateTotalServices()" (click)="calculatePartsAndHours()">Invoice</button>
+  </div>
+</div>
+
+
+
+
+
+
+

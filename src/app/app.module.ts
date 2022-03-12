@@ -41,6 +41,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CustomerInvoiceComponent } from './customer-invoice/customer-invoice.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     BaseNavComponent,
     InvoiceDialogComponent,
     ServiceListComponent,
-    ServicesComponent
+    ServicesComponent,
+    CustomerInvoiceComponent
 
   ],
   imports: [

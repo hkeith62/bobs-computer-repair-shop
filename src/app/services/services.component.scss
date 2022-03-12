@@ -1,0 +1,60 @@
+.logo {
+  margin-top: 8px;
+  margin-left: -15px;
+}
+.main-container {
+  margin-top: -75px;
+}
+
+.nav-container {
+  padding-left: 550px;
+}
+.sign-in-container-one {
+  padding-left: 90px;
+}
+.sign-in-container-two {
+  padding-right: 50px;
+}
+
+.toggle-text {
+  font-size: 14px;
+  font-family: Roboto;
+  margin-top: 4px;
+  margin-left: 10px;
+}
+.invoice-container {
+  width: 35%;
+}
+.invoice-container > mat-card-title, mat-card-subtitle {
+  padding-top: 8px;
+  font-size: 14px;
+}
+
+.msg-error {
+  margin: 10px 0px;
+  padding: 12px;
+  color: #D8000C;
+  background-color: #FFD2D2;
+}
+#card-title-icon, .mat-icon {
+  font-size: 24px;
+}
+.card-container {
+  margin-left: 35px;
+}
+mat-checkbox {
+  padding: 0.3rem;
+  color: white;
+}
+.reset-button {
+  margin-left: 45px;
+  margin-top: -10px;
+}
+.total-button {
+margin-left: 19px;
+}
+.invoice-button {
+  margin-top: -20px;
+  margin-left: 19px;
+
+}
