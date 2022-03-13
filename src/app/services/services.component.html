@@ -6,7 +6,7 @@
     Description: HTML markup file for the Services Component.
 -->
 
-<div fxLayout="row wrap">
+<div fxLayout="row wrap" class="fx-container">
   <div fxFlex>
       <div class="photo-container">
         <img src="./assets/contact.jpg" height= "450" width= "400"/>
@@ -18,7 +18,7 @@
       </div>
   </div>
   <div feFlex>
-    <h1 class="blue" style="margin-left:50px">Repair Services Estimate</h1>
+    <h1 class="blue" style="margin-left:50px">Repair Service Estimate</h1>
     <mat-card class="mat-elevation-z0">
       <mat-card-title id="card-title-icon">
       </mat-card-title>
@@ -42,6 +42,7 @@
       </mat-card-content>
     </mat-card><br /><br />
     <div class="labor">Labor (incl.) <br />$0.00</div><br /><br />
+    <hr style="width:25%; margin-left:64px">
     <h2 class="total-button">Total: &nbsp;{{ calculateTotalServices() | currency }}</h2><br />
 
      <button mat-raised-button color="accent" class="invoice-button"
