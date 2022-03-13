@@ -5,19 +5,42 @@
  * Modified By: Keith Hall
  * Description: Styles for the service-list component.
  */
+
+ html, body {
+  height: 100%;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
 .service-tile {
   padding: 5rem 5rem 2rem;
-  color: black;
+
 }
 mat-checkbox {
-  padding: 0.2rem;
-  color: #212121;
+  padding: 0.4rem;
 }
 
 .submit-button {
-  float: right;
-  margin: 0 5rem 5rem 0;
+
+  margin-top: 1rem;
 }
 .service-wrapper {
   min-height: calc(100vh - 565px);
+}
+#card-container {
+  margin-left: 20%;
+  margin-right: 10%;
+  top: 50px;
+
+}
+.main-container {
+  width:90%;
+  height: 600px;
+  margin: auto;
+  top: 0px;
+}
+.toggle-text {
+  font-size: 14px;
+  font-family: Roboto;
+  margin-top: 4px;
+  margin-left: 10px;
 }

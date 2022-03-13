@@ -8,35 +8,32 @@
 ;===========================================
  -->
 
-<div style="text-align: right">
+<div class="close-btn">
   <button mat-icon-button matDialogClose="cancel">
     <mat-icon>close</mat-icon>
   </button>
 </div>
 
-<div class="font-bold">Invoice Summary</div><span style="float:right">{{ today | date }}</span>
+<div class="invoice-title">Invoice Summary</div>
 <hr />
 <br />
+<span style="float:right">{{ today | date }}</span><br />
 
-<div>
+<div class="invoice-content">
   <br />
-  <div *ngFor="let service of services">
-    <div>
+  <div *ngFor="let service of services" class="invoice-row">
+    <div class="service-name">
       {{ service.name }}
-      <div style="float: right">{{ service.price | currency }}</div>
-
     </div>
+  <div class="price-float" style="float: right">{{ service.price | currency }}</div>
   </div>
   <br />
-
-  <div>
+  <div class="standard-rates">
     <div *ngIf="parts">
-      <div>
-        Parts
+      <div>Parts
         <div style="float: right">{{ parts | currency }}</div>
       </div>
     </div>
-
     <div *ngIf="totalWithService">
       <div>
         Labor
@@ -44,29 +41,13 @@
       </div>
     </div>
   </div>
-  <br />
 
-  <div *ngIf="total">
-    <div>
-      Total Charges
-      <div style="float: right">{{ total | currency }}</div>
-    </div>
+  <div class="invoice-row invoice-total" *ngIf="total">
+      <div class="service"><strong>Total Charges</strong></div>
+      <div><strong>${{ total.toFixed(2) }}</strong></div>
   </div>
-</div>
-<br />
 
-<div style="text-align: right">
-  <button
-    class="
-      border-solid border border-gray-300
-      rounded
-      py-2
-      px-4
-      hover:bg-gray-100
-    "
-    onClick="window.print()"
-  >
-    <i class="fas fa-print"></i> Print
-  </button>
+<div class="close-btn"><button mat-stroked-button color="primary" onClick="window.print()">
+  <mat-icon color="primary">print</mat-icon> Print </button>
 </div>
 

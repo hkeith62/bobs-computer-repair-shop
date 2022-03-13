@@ -7,7 +7,6 @@
  ***/
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InvoiceDialogComponent } from './invoice-dialog.component';
 
 describe('InvoiceDialogComponent', () => {

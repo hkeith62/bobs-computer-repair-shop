@@ -20,22 +20,29 @@
         <mat-slide-toggle [(ngModel)]='isDarkTheme' class="toggle-text">Dark Theme</mat-slide-toggle>
     </mat-toolbar-row>
   </mat-toolbar>
-</div>
 
-<div class="service-wrapper">
-  <div fxLayout="row wrap">
-    <div fxFlex class="service-tile">
-      <h3>Services</h3>
 
-      <!-- Service Checkboxes -->
+<div fxLayout="row wrap" fxLayoutGap="20px">
+  <mat-card class="main-container" color="primary">
+    <h1 style="text-align:center;margin-top:20px;color:#2196F3;font-size:24px">Invoicing</h1>
+  <mat-card-title></mat-card-title>
+  <mat-card-content>
+  <div class="service-checkbox" fxFlex>
+    <mat-card color="primary" id="card-container" class="mat-elevation-z8">
+      <mat-card-title style="color:#2196F3;font-size:16px">Services</mat-card-title><br />
+        <mat-card-content>
+
       <div *ngFor="let service of services">
         <mat-checkbox name="" id="" totalValue="" [(ngModel)]="service.checked">
           {{ service.name }} - ${{ service.price.toFixed(2) }}
         </mat-checkbox>
+
       </div>
-    </div>
+	  </mat-card-content>
+    <button mat-button color="primary" (click)="reset()">Reset</button>
+    </mat-card>
     <div fxFlex="100%" fxFlex.gt-sm="50%" class="service-tile">
-      <h3>Standard Rates</h3>
+      <h3 color="primary" style="color:#2196F3;font-size:16px">Standard Rates</h3>
       <br />
       <div>
         <mat-form-field fxFlex appearance="fill">
@@ -51,14 +58,13 @@
           <button mat-button *ngIf="hour" matSuffix mat-icon-button aria-label="Clear"(click)="hour = ''"><mat-icon>close</mat-icon></button>
         </mat-form-field>
       </div>
+      <div>
+        <!-- Launch Modal -->
+        <button class="submit-button" mat-raised-button color="primary" (click)="calculateResults()">Calculate</button>
+      </div>
     </div>
   </div>
-  <div class="submit-button">
-    <!-- Reset all checkboxes and input fields -->
-    <button mat-button color="warn" (click)="reset()">Reset</button>
-    <!-- Launch Modal with Calculated Results -->
-    <button mat-raised-button color="accent" (click)="calculateResults()">
-      Calculate
-    </button>
-  </div>
+</mat-card-content>
+</mat-card>
+</div>
 </div>

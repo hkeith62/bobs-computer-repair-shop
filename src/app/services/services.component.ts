@@ -19,13 +19,13 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnInit {
-  services: Array<IService>; // services array
-  parts: number; // parts tally
-  hours: number; // hours tally
-  total: number; // total parts & hours
-  totalWithService: number; // hourly rate
+  services: Array<IService>; 
+  parts: number; 
+  hours: number; 
+  total: number; 
+  totalWithService: number; 
 
-  // get services from services.service
+  
   constructor(
     private serviceListService: ServiceListService,
     private dialog: MatDialog
@@ -46,7 +46,6 @@ export class ServicesComponent implements OnInit {
     this.hours = 0;
   }
 
-  // calculate total cost of services
   calculateTotalServices(): number {
     let totalServices = 0;
     this.services.forEach((service: IService) => {
@@ -77,14 +76,13 @@ export class ServicesComponent implements OnInit {
     });
 
     if (!!total) {
-      this.total = 0;
+      this.total = total;
       this.showInvoice();
     }
   }
 
   ngOnInit(): void {}
 
-  // display invoice modal
   showInvoice() {
     const { services, parts, hours, total, totalWithService } = this;
 

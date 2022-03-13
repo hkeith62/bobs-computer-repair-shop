@@ -5,13 +5,13 @@
  * Modified By: Keith Hall
  * Description: Styling file for invoice-dialog component.
  */
- 
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   overflow-x: hidden;
 }
-.btn-right {
+.close-btn {
   display: flex;
   justify-content: flex-end;
 }
@@ -29,7 +29,7 @@ body {
   justify-content: space-between;
   padding: 0.5rem;
 }
-.invoice-custom {
+.standard-rates {
   padding-top: 1.5rem;
 }
 .invoice-total {
