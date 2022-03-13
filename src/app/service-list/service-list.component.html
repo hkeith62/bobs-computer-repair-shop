@@ -35,19 +35,19 @@
       </div>
     </div>
     <div fxFlex="100%" fxFlex.gt-sm="50%" class="service-tile">
-      <h3>Standard Fees</h3>
+      <h3>Standard Rates</h3>
       <br />
       <div>
         <mat-form-field fxFlex appearance="fill">
           <mat-label>Part(s)</mat-label>
-          <mat-icon matPrefix>attach_money</mat-icon><input type="text" name="txtPart" id="txtPart" matInput type="number" [(ngModel)]="part"/>
+           <input type="text" name="txtPart" id="txtPart" matInput type="number" [(ngModel)]="part"/>
           <button mat-button *ngIf="part" matSuffix mat-icon-button aria-label="Clear" (click)="part = ''"><mat-icon>close</mat-icon></button>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field fxFlex appearance="fill">
-          <mat-label>Labor (standard fee of $50 per hour)</mat-label>
-          <mat-icon matPrefix>access_time</mat-icon><input type="text" name="txtHour" id="txtHour" matInput type="number" [(ngModel)]="hour"/>
+          <mat-label>Labor (standard rate of $50 per hour)</mat-label>
+           <input type="text" name="txtHour" id="txtHour" matInput type="number" [(ngModel)]="hour"/>
           <button mat-button *ngIf="hour" matSuffix mat-icon-button aria-label="Clear"(click)="hour = ''"><mat-icon>close</mat-icon></button>
         </mat-form-field>
       </div>

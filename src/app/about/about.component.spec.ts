@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  about.component.spec.ts
+; Author: Professor Krasso
+; Date: 12 March 2022
+; Modified By: K. Hall
+; Description: Test file for the about component.   
+;===========================================
+*/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';

@@ -1,10 +1,10 @@
 /*
 ============================================
-; Title:  invoice.component.ts
+; Title:  cutomer-invoice.component.ts
 ; Author: Professor Krasso
 ; Date: 12 March 2022
 ; Modified By: K. Hall
-; Description: Invoice dialog component TS file
+; Description: Customer-invoice dialog component TS file
 ;===========================================
 */
 
@@ -19,18 +19,18 @@ import { IService } from '../service.interface';
   styleUrls: ['./customer-invoice.component.scss'],
 })
 export class CustomerInvoiceComponent implements OnInit {
-  services: Array<IService>; // services array
-  today: Date; // today's date
-  parts: number; // parts
-  hours: number; // hours
-  total: number; // total
-  totalWithService: number; // hourly rate
+  services: Array<IService>; 
+  today: Date; 
+  parts: number; 
+  hours: number; 
+  total: number; 
+  totalWithService: number;
 
   constructor(
     private dialogRef: MatDialogRef<CustomerInvoiceComponent>,
     @Inject(MAT_DIALOG_DATA) data: any
   ) {
-    // invoice modal values
+    
     const { services, today, parts, hours, total, totalWithService } = data;
     this.services = services;
     this.today = new Date();

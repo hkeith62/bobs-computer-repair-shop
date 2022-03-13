@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  about.component.ts
+; Author: Professor Krasso
+; Date: 12 March 2022
+; Modified By: K. Hall
+; Description: about.component.ts file   
+;===========================================
+*/
 import { Component, OnInit } from '@angular/core';
 
 @Component({

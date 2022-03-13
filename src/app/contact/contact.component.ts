@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  contact.component.ts
+; Author: Professor Krasso
+; Date: 12 March 2022
+; Modified By: K. Hall
+; Description: Typescript for the contact component file
+;===========================================
+*/
 import { Component, OnInit } from '@angular/core';
 
 @Component({

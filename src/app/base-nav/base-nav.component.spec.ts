@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  base-nav.component.spec.ts
+; Author: Professor Krasso
+; Date: 12 March 2022
+; Modified By: K. Hall
+; Description: Test file for the base-nav component.   
+;===========================================
+*/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BaseNavComponent } from './base-nav.component';

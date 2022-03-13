@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  cutomer-invoice.component.spec.ts
+; Author: Professor Krasso
+; Date: 12 March 2022
+; Modified By: K. Hall
+; Description: Test file for the customer-invoice dialog component.
+;===========================================
+*/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustomerInvoiceComponent } from './customer-invoice.component';

@@ -7,16 +7,23 @@
 -->
 
 <!-- Invoice Modal -->
+<mat-card>
+  <mat-card-title></mat-card-title>
+  <mat-card-content>
+
+
 <div class="btn-right">
   <button mat-icon-button matDialogClose="cancel">
-    <mat-icon color="secondary">close</mat-icon>
+    <mat-icon color="primary">close</mat-icon>
   </button>
 </div>
 
 <div class="invoice-title">Invoice Summary</div>
 <hr />
+<br />
+<span style="float:right">{{ today | date }}</span><br />
 <div class="invoice-content">
-  
+
   <div *ngFor="let service of services" class="invoice-row">
     <div class="service">
       {{ service.name }}
@@ -24,13 +31,13 @@
     <div class="price">${{ service.price.toFixed(2) }}</div>
   </div>
   <div class="invoice-custom">
-    <!-- Input price for parts -->
+
     <div class="invoice-row" *ngIf="part">
       <div class="service">Parts</div>
       <div class="price">${{ part.toFixed(2) }}</div>
     </div>
     <div class="invoice-row" *ngIf="laborServiceTotal">
-      <!-- Input Labor Hours -->
+
       <div class="service">
         Labor
         <span class="custom-service-calc">({{ hour }} ⨉ 50)</span>
@@ -50,3 +57,5 @@
     <mat-icon color="primary">print</mat-icon> Print
   </button>
 </div>
+</mat-card-content>
+</mat-card>

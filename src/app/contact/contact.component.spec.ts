@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  contact.component.spec.ts
+; Author: Professor Krasso
+; Date: 12 March 2022
+; Modified By: K. Hall
+; Description: Test file for the contact component file
+;===========================================
+*/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';

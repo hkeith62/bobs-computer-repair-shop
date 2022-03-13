@@ -1,3 +1,10 @@
+ /**
+ * Title: home.component.ts
+ * Author: Professor Krasso
+ * Date: 11 Mar 2021
+ * Modified By:  Keith Hall
+ * Description: Typescript logic for the home component.
+ ***/
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,27 +1,23 @@
  <!--
 ============================================
-; Title:  invoice.component.html
+; Title:  customer-invoice.component.html
 ; Author: Professor Krasso
 ; Date: 12 March 2022
 ; Modified By: K. Hall
-; Description: Invoice component HTML file
+; Description: Customer-invoice component HTML file
 ;===========================================
  -->
 
-<!-- close button -->
 <div style="text-align: right">
   <button mat-icon-button matDialogClose="cancel">
     <mat-icon>close</mat-icon>
   </button>
 </div>
 
-<!-- summary  -->
 <div class="font-bold">Invoice Summary</div><span style="float:right">{{ today | date }}</span>
 <hr />
 <br />
 
-
-<!-- list of services -->
 <div>
   <br />
   <div *ngFor="let service of services">
@@ -33,7 +29,6 @@
   </div>
   <br />
 
-  <!-- parts -->
   <div>
     <div *ngIf="parts">
       <div>
@@ -42,7 +37,6 @@
       </div>
     </div>
 
-    <!-- labor -->
     <div *ngIf="totalWithService">
       <div>
         Labor
@@ -52,7 +46,6 @@
   </div>
   <br />
 
-  <!-- total -->
   <div *ngIf="total">
     <div>
       Total Charges
@@ -62,7 +55,6 @@
 </div>
 <br />
 
-<!-- print -->
 <div style="text-align: right">
   <button
     class="

@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  base-nav.component.ts
+; Author: Professor Krasso
+; Date: 12 March 2022
+; Modified By: K. Hall
+; Description: Typescript logic for the base-nav component.   
+;===========================================
+*/
 import { Component, OnInit } from '@angular/core';
 
 @Component({
