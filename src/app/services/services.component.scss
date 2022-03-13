@@ -44,17 +44,28 @@
 }
 mat-checkbox {
   padding: 0.3rem;
-  color: white;
+
 }
 .reset-button {
   margin-left: 45px;
   margin-top: -10px;
 }
 .total-button {
-margin-left: 19px;
+margin-left: 65px;
+margin-top: 50px;
+
 }
 .invoice-button {
   margin-top: -20px;
-  margin-left: 19px;
+  margin-left: 65px;
+  width: 30%;
 
 }
+.parts {
+margin-right: 178px;
+margin-top: 12px;
+}
+.labor {
+  margin-left: 78px;
+}
+

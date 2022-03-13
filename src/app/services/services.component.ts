@@ -77,7 +77,7 @@ export class ServicesComponent implements OnInit {
     });
 
     if (!!total) {
-      this.total = total;
+      this.total = 0;
       this.showInvoice();
     }
   }

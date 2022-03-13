@@ -35,28 +35,13 @@
   </div>
   <div fxFlex style= "margin-top:50.38px">
     <mat-card class="mat-elevation-z0">
-      <mat-card-title class="card-title-icon">
-      </mat-card-title>
+      <mat-card-title class="card-title-icon"></mat-card-title>
       <br />
       <mat-card-content class="align-center">
-        <div class="flex flex-col">
-
-          <br />
-          <div>
-              <mat-form-field fxFlex appearance="fill">
-                  <mat-label>Parts</mat-label>
-                      <h2 class="font-bold mt-6"></h2>{{ calculateTotalServices() | currency }}<input type="text" name="part" id="part" matInput type="number"
-                      [(ngModel)]="parts" />
-              </mat-form-field>
-          </div>
-          <div>
-              <mat-form-field fxFlex appearance="fill"><br /><br /><br />
-                  <mat-label>Labor <br /><br />$0.00</mat-label><input type="text" name="hours" id="hours" matInput type="number" [(ngModel)]="hours" />
-              </mat-form-field>
-          </div>
-        </div>
+          <div class="parts">Parts <br />{{ calculateTotalServices() | currency }}</div>
       </mat-card-content>
-    </mat-card>
+    </mat-card><br /><br />
+    <div class="labor">Labor (incl.) <br />$0.00</div><br /><br />
     <h2 class="total-button">Total: &nbsp;{{ calculateTotalServices() | currency }}</h2><br />
 
      <button mat-raised-button color="accent" class="invoice-button"
